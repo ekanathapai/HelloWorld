@@ -48,7 +48,9 @@
  * HelloWorldSwing.java requires no other files. 
  */
 import javax.swing.*;        
- 
+import java.awt.*;
+import java.awt.geom.Rectangle2D;
+
 public class HelloWorldSwing {
     /**
      * Create the GUI and show it.  For thread safety,
@@ -59,17 +61,24 @@ public class HelloWorldSwing {
         //Create and set up the window.
         JFrame frame = new JFrame("HelloWorldSwing");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
- 
+        frame.setSize(400,300);
+        
         //Add the ubiquitous "Hello World" label.
-        JLabel label = new JLabel("Hello World");
+        JLabel label = new JLabel("Hello World!!");
+        label.setBackground(Color.getColor("Red"));
+        label.setFont(Font.getFont("California FB"));
+        label.setSize(400,400);
+        label.setAlignmentX(Label.CENTER);
+        label.setAlignmentY(Label.CENTER);
+
         frame.getContentPane().add(label);
  
         //Display the window.
-        frame.pack();
+        // frame.pack();
         frame.setVisible(true);
     }
  
-    public static void main(String[] args) {
+	public static void main(String[] args) {
         //Schedule a job for the event-dispatching thread:
         //creating and showing this application's GUI.
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
